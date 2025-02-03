@@ -7,11 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
+        <StackPanel>
         <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
             <Label>лабораторная 1</Label>
             <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
             <Button Margin="5" x:Name="l1Edit" Click="l1Edit_Click">преобразование</Button>
         </StackPanel>
-    </Grid>
+        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+            <Label>лабораторная 2</Label>
+            <Button Margin="5" x:Name="l2OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
+            <Button Margin="5" x:Name="l2Edit" Click="l2Edit_Click">преобразование</Button>
+        </StackPanel>
+        </StackPanel>
+
 </Window>

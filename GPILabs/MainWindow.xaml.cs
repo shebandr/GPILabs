@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -25,6 +26,7 @@ namespace GPILabs
 		public MainWindow()
 		{
 			InitializeComponent();
+			
 		}
 
 		private void l1OpenFile_Click(object sender, RoutedEventArgs e)
@@ -54,5 +56,18 @@ namespace GPILabs
 		
 		}
 
+		private void l2Edit_Click(object sender, RoutedEventArgs e)
+		{
+			List<byte> data = l1.GetBytesFromBMP(lab1path);
+			List<byte> result = l2.AddBorder(data);
+
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			if (saveFileDialog.ShowDialog() == true)
+			{
+				lab1path = saveFileDialog.FileName;
+			}
+			Console.WriteLine(lab1path);
+			l1.SetBytesToBMP(lab1path, result);
+		}
 	}
 }
