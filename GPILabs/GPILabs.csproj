@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="l1.cs" />
     <Compile Include="l2.cs" />
+    <Compile Include="l3.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

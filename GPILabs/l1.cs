@@ -23,7 +23,7 @@ namespace GPILabs
 				int G = data[55 + (i * 4)];
 				int B = data[56 + (i * 4)];
 				
-				//int NewColor = ((int)((R * 0.3) + (G * 0.59) + (B * 0.11)))/3; мне не понравилось затемнение
+				//int NewColor = ((int)((R * 0.3) + (G * 0.59) + (B * 0.11)))/3;
 				int NewColor = ((int)(R + G + B))/3;
 				result[54 + (i * 4)] = (byte)NewColor;
 				result[55 + (i * 4)] = (byte)NewColor;

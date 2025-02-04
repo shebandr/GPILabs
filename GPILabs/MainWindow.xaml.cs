@@ -69,5 +69,19 @@ namespace GPILabs
 			Console.WriteLine(lab1path);
 			l1.SetBytesToBMP(lab1path, result);
 		}
-	}
+
+        private void l3Edit_Click(object sender, RoutedEventArgs e)
+        {
+            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> result = l3.RotateBMP(data);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                lab1path = saveFileDialog.FileName;
+            }
+            Console.WriteLine(lab1path);
+            l1.SetBytesToBMP(lab1path, result);
+        }
+    }
 }

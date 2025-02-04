@@ -18,6 +18,11 @@
             <Button Margin="5" x:Name="l2OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
             <Button Margin="5" x:Name="l2Edit" Click="l2Edit_Click">преобразование</Button>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+            <Label>лабораторная 3</Label>
+            <Button Margin="5" x:Name="l3OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
+            <Button Margin="5" x:Name="l3Edit" Click="l3Edit_Click">преобразование</Button>
         </StackPanel>
+    </StackPanel>
 
 </Window>
