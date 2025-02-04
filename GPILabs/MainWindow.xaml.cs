@@ -83,5 +83,12 @@ namespace GPILabs
             Console.WriteLine(lab1path);
             l1.SetBytesToBMP(lab1path, result);
         }
+
+        private void l4Edit_Click(object sender, RoutedEventArgs e)
+        {
+            List<byte> data = l1.GetBytesFromBMP(lab1path);
+			l4.printBMP(data, outputImage);
+
+        }
     }
 }

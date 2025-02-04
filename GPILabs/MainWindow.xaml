@@ -5,24 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GPILabs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-
+        Title="MainWindow" Height="800" Width="1200">
+    <StackPanel Orientation="Horizontal">
         <StackPanel>
+        
+        <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click" Width="50" HorizontalAlignment="Left">открыть файл</Button>
         <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
             <Label>лабораторная 1</Label>
-            <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
+            
             <Button Margin="5" x:Name="l1Edit" Click="l1Edit_Click">преобразование</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
             <Label>лабораторная 2</Label>
-            <Button Margin="5" x:Name="l2OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
             <Button Margin="5" x:Name="l2Edit" Click="l2Edit_Click">преобразование</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
             <Label>лабораторная 3</Label>
-            <Button Margin="5" x:Name="l3OpenFile" Click="l1OpenFile_Click">открыть файл</Button>
             <Button Margin="5" x:Name="l3Edit" Click="l3Edit_Click">преобразование</Button>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+            <Label>лабораторная 4</Label>
+            <Button Margin="5" x:Name="l4Edit" Click="l4Edit_Click">преобразование</Button>
+        </StackPanel>
+            </StackPanel>
+        <Image Width="900" Height="800" x:Name="outputImage">
+            
+        </Image>
     </StackPanel>
 
 </Window>

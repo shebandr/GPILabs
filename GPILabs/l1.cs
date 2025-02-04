@@ -14,10 +14,10 @@ namespace GPILabs
 		public static List<byte> RGBToBW(List<byte> data)
 		{
 			List<byte> result = new List<byte>(data);
-			int ColorsCount = BitConverter.ToInt32(data.GetRange(46, 50).ToArray(),0);
-			Console.WriteLine(ColorsCount);
+			int colorsCount = BitConverter.ToInt32(data.GetRange(46, 50).ToArray(),0);
+			Console.WriteLine(colorsCount);
 
-			for(int i = 0; i<ColorsCount; i++)
+			for(int i = 0; i<colorsCount; i++)
 			{
 				int R = data[54 + (i * 4)];
 				int G = data[55 + (i * 4)];
