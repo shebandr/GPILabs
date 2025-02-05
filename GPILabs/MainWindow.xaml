@@ -9,24 +9,32 @@
     <StackPanel Orientation="Horizontal">
         <StackPanel>
         
-        <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click" Width="50" HorizontalAlignment="Left">открыть файл</Button>
-        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
-            <Label>лабораторная 1</Label>
+            <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click" Width="50" HorizontalAlignment="Left">открыть файл</Button>
+            <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+                <Label>лабораторная 1</Label>
             
-            <Button Margin="5" x:Name="l1Edit" Click="l1Edit_Click">преобразование</Button>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
-            <Label>лабораторная 2</Label>
-            <Button Margin="5" x:Name="l2Edit" Click="l2Edit_Click">преобразование</Button>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
-            <Label>лабораторная 3</Label>
-            <Button Margin="5" x:Name="l3Edit" Click="l3Edit_Click">преобразование</Button>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
-            <Label>лабораторная 4</Label>
-            <Button Margin="5" x:Name="l4Edit" Click="l4Edit_Click">преобразование</Button>
-        </StackPanel>
+                <Button Margin="5" x:Name="l1Edit" Click="l1Edit_Click">преобразование</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+                <Label>лабораторная 2</Label>
+                <Button Margin="5" x:Name="l2Edit" Click="l2Edit_Click">преобразование</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+                <Label>лабораторная 3</Label>
+                <Button Margin="5" x:Name="l3Edit" Click="l3Edit_Click">преобразование</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+                <Label>лабораторная 4</Label>
+                <Button Margin="5" x:Name="l4Edit" Click="l4Edit_Click">преобразование</Button>
+            </StackPanel>
+            <StackPanel>
+                <Label>лабораторная 5</Label>
+                <TextBox x:Name="scaleTextBox"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="l5Upscale" Click="l5Upscale_Click" Margin="5" >апскейл</Button>
+                    <Button x:Name="l5Downscale" Click="l5Downscale_Click" Margin="5">даунскейл</Button>
+                </StackPanel>
+            </StackPanel>
             </StackPanel>
         <Image Width="900" Height="800" x:Name="outputImage">
             

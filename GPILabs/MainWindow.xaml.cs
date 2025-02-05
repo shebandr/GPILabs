@@ -90,5 +90,15 @@ namespace GPILabs
 			l4.printBMP(data, outputImage);
 
         }
-    }
+
+		private void l5Downscale_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void l5Upscale_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+	}
 }
