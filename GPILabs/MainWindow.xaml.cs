@@ -93,12 +93,32 @@ namespace GPILabs
 
 		private void l5Downscale_Click(object sender, RoutedEventArgs e)
 		{
+            int scale = Int32.Parse(scaleTextBox.Text);
+            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> result = l5.DownscaleBMP(data, scale);
 
-		}
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                lab1path = saveFileDialog.FileName;
+            }
+            Console.WriteLine(lab1path);
+            l1.SetBytesToBMP(lab1path, result);
+        }
 
 		private void l5Upscale_Click(object sender, RoutedEventArgs e)
 		{
+			int scale = Int32.Parse(scaleTextBox.Text);
+            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> result = l5.UpscaleBMP(data, scale);
 
-		}
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                lab1path = saveFileDialog.FileName;
+            }
+            Console.WriteLine(lab1path);
+            l1.SetBytesToBMP(lab1path, result);
+        }
 	}
 }
