@@ -9,7 +9,7 @@
     <StackPanel Orientation="Horizontal">
         <StackPanel>
         
-            <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click" Width="50" HorizontalAlignment="Left">открыть файл</Button>
+            <Button Margin="5" x:Name="l1OpenFile" Click="l1OpenFile_Click" Width="90" HorizontalAlignment="Left">открыть файл</Button>
             <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
                 <Label>лабораторная 1</Label>
             
@@ -34,6 +34,12 @@
                     <Button x:Name="l5Upscale" Click="l5Upscale_Click" Margin="5" >апскейл</Button>
                     <Button x:Name="l5Downscale" Click="l5Downscale_Click" Margin="5">даунскейл</Button>
                 </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <Label>лабораторная 6</Label>
+                <Button Margin="5" x:Name="l6OpenFile" Click="l6OpenFile_Click" Width="140" HorizontalAlignment="Left">открыть файл логотипа</Button>
+                <TextBox x:Name="opacityTextBox"></TextBox>
+                <Button Margin="5" x:Name="l6Edit" Click="l6Edit_Click" Width="100" HorizontalAlignment="Left">преобразование</Button>
             </StackPanel>
             </StackPanel>
         <Image Width="900" Height="800" x:Name="outputImage">

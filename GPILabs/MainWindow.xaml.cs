@@ -22,7 +22,9 @@ namespace GPILabs
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		string lab1path = "";
+		string fileOpenPath = "";
+		string fileSavePath = "";
+		string logoOpenPath = "";
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -36,57 +38,54 @@ namespace GPILabs
 
 			if (openFileDialog.ShowDialog() == true)
 			{
-				lab1path = openFileDialog.FileName;
+				fileOpenPath = openFileDialog.FileName;
 			}
-			Console.WriteLine(lab1path);
+			Console.WriteLine(fileOpenPath);
 		}
 
 		private void l1Edit_Click(object sender, RoutedEventArgs e)
 		{
-			List<byte> data = l1.GetBytesFromBMP(lab1path);
+			List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
 			List<byte> result = l1.RGBToBW(data);
 
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			if (saveFileDialog.ShowDialog() == true)
 			{
-				lab1path = saveFileDialog.FileName;
+				fileSavePath = saveFileDialog.FileName;
 			}
-			Console.WriteLine(lab1path);
-			l1.SetBytesToBMP(lab1path, result);
+			l1.SetBytesToBMP(fileSavePath, result);
 		
 		}
 
 		private void l2Edit_Click(object sender, RoutedEventArgs e)
 		{
-			List<byte> data = l1.GetBytesFromBMP(lab1path);
+			List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
 			List<byte> result = l2.AddBorder(data);
 
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			if (saveFileDialog.ShowDialog() == true)
 			{
-				lab1path = saveFileDialog.FileName;
+				fileSavePath = saveFileDialog.FileName;
 			}
-			Console.WriteLine(lab1path);
-			l1.SetBytesToBMP(lab1path, result);
+			l1.SetBytesToBMP(fileSavePath, result);
 		}
 
         private void l3Edit_Click(object sender, RoutedEventArgs e)
         {
-            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
             List<byte> result = l3.RotateBMP(data);
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
             {
-                lab1path = saveFileDialog.FileName;
+				fileSavePath = saveFileDialog.FileName;
             }
-            Console.WriteLine(lab1path);
-            l1.SetBytesToBMP(lab1path, result);
+            l1.SetBytesToBMP(fileSavePath, result);
         }
 
         private void l4Edit_Click(object sender, RoutedEventArgs e)
         {
-            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
 			l4.printBMP(data, outputImage);
 
         }
@@ -94,31 +93,57 @@ namespace GPILabs
 		private void l5Downscale_Click(object sender, RoutedEventArgs e)
 		{
             int scale = Int32.Parse(scaleTextBox.Text);
-            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
             List<byte> result = l5.DownscaleBMP(data, scale);
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
             {
-                lab1path = saveFileDialog.FileName;
+				fileSavePath = saveFileDialog.FileName;
             }
-            Console.WriteLine(lab1path);
-            l1.SetBytesToBMP(lab1path, result);
+            l1.SetBytesToBMP(fileSavePath, result);
         }
 
 		private void l5Upscale_Click(object sender, RoutedEventArgs e)
 		{
 			int scale = Int32.Parse(scaleTextBox.Text);
-            List<byte> data = l1.GetBytesFromBMP(lab1path);
+            List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
             List<byte> result = l5.UpscaleBMP(data, scale);
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
             {
-                lab1path = saveFileDialog.FileName;
+				fileSavePath = saveFileDialog.FileName;
             }
-            Console.WriteLine(lab1path);
-            l1.SetBytesToBMP(lab1path, result);
+            l1.SetBytesToBMP(fileSavePath, result);
         }
+
+		private void l6OpenFile_Click(object sender, RoutedEventArgs e)
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+
+
+			if (openFileDialog.ShowDialog() == true)
+			{
+				logoOpenPath = openFileDialog.FileName;
+			}
+			Console.WriteLine(logoOpenPath);
+		}
+
+		private void l6Edit_Click(object sender, RoutedEventArgs e)
+		{
+			List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
+			List<byte> logo = l1.GetBytesFromBMP(logoOpenPath);
+			float k = float.Parse(opacityTextBox.Text);
+			List<byte> result = l6.SetLogo(data, logo, k, 100, 100);
+
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			if (saveFileDialog.ShowDialog() == true)
+			{
+				fileSavePath = saveFileDialog.FileName;
+			}
+			l1.SetBytesToBMP(fileSavePath, result);
+		}
+
 	}
 }

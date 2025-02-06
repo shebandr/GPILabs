@@ -70,6 +70,7 @@
     <Compile Include="l3.cs" />
     <Compile Include="l4.cs" />
     <Compile Include="l5.cs" />
+    <Compile Include="l6.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
