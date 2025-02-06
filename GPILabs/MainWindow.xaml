@@ -41,7 +41,14 @@
                 <TextBox x:Name="opacityTextBox"></TextBox>
                 <Button Margin="5" x:Name="l6Edit" Click="l6Edit_Click" Width="100" HorizontalAlignment="Left">преобразование</Button>
             </StackPanel>
+            <StackPanel>
+                <Label>лабораторная 7</Label>
+                <Button Margin="5" x:Name="l7OpenFile" Click="l6OpenFile_Click" Width="140" HorizontalAlignment="Left">открыть текстовый файл</Button>
+                <TextBox x:Name="bitsTextBox"></TextBox>
+                <Button Margin="5" x:Name="l7EditIn" Click="l7EditIn_Click" Width="100" HorizontalAlignment="Left">текст в бмп</Button>
+                <Button Margin="5" x:Name="l7EditOut" Click="l7EditOut_Click" Width="100" HorizontalAlignment="Left">текст из бмп</Button>
             </StackPanel>
+        </StackPanel>
         <Image Width="900" Height="800" x:Name="outputImage">
             
         </Image>

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GPILabs
 {
@@ -145,5 +146,41 @@ namespace GPILabs
 			l1.SetBytesToBMP(fileSavePath, result);
 		}
 
+		private void l7EditIn_Click(object sender, RoutedEventArgs e)
+		{
+			List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
+			List<byte> text = l1.GetBytesFromBMP(logoOpenPath);
+
+			int bits = Int32.Parse(bitsTextBox.Text);
+			List<byte> result = new List<byte>();
+			if (bits >= 1 && bits <= 8)
+			{
+				result = l7.TextToBMP(data, text, bits);
+			}
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			if (saveFileDialog.ShowDialog() == true)
+			{
+				fileSavePath = saveFileDialog.FileName;
+			}
+			l1.SetBytesToBMP(fileSavePath, result);
+
+		}
+
+		private void l7EditOut_Click(object sender, RoutedEventArgs e)
+		{
+			List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
+			int bits = Int32.Parse(bitsTextBox.Text);
+			List<byte> result = new List<byte>();
+			if (bits >= 1 && bits <= 8)
+			{
+				result = l7.BMPToText(data, bits);
+			}
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			if (saveFileDialog.ShowDialog() == true)
+			{
+				fileSavePath = saveFileDialog.FileName;
+			}
+			l1.SetBytesToBMP(fileSavePath, result);
+		}
 	}
 }
