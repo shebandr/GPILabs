@@ -48,6 +48,10 @@
                 <Button Margin="5" x:Name="l7EditIn" Click="l7EditIn_Click" Width="100" HorizontalAlignment="Left">текст в бмп</Button>
                 <Button Margin="5" x:Name="l7EditOut" Click="l7EditOut_Click" Width="100" HorizontalAlignment="Left">текст из бмп</Button>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="30px" VerticalAlignment="Top">
+                <Label>лабораторная 8</Label>
+                <Button Margin="5" x:Name="l8Edit" Click="l8Edit_Click">преобразование</Button>
+            </StackPanel>
         </StackPanel>
         <Image Width="900" Height="800" x:Name="outputImage">
             

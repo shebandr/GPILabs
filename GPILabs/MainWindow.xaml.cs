@@ -182,5 +182,11 @@ namespace GPILabs
 			}
 			l1.SetBytesToBMP(fileSavePath, result);
 		}
+
+		private void l8Edit_Click(object sender, RoutedEventArgs e)
+		{
+			List<byte> data = l1.GetBytesFromBMP(fileOpenPath);
+			l8.printPCX(data, outputImage);
+		}
 	}
 }
